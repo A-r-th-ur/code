@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 interface Todo {
   id: number;
@@ -11,8 +11,8 @@ const TodoList: React.FC = () => {
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value);
-  };
-
+  };//this one adds the typed text into the textbox
+  
   const handleAddTodo = () => {
     if (inputText.trim() !== '') {
       const newTodo: Todo = {
@@ -32,7 +32,7 @@ const TodoList: React.FC = () => {
   return (
     <div>
       <h1>Todo List</h1>
-      <input type="text" value={inputText} onChange={handleInputChange} />
+        <input type="text" value={inputText} onChange={handleInputChange} />
       <button onClick={handleAddTodo}>Add</button>
       <ul>
         {todos.map((todo) => (

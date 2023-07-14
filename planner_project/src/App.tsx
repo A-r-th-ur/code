@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 import TodoList from './TodoList'
+import MyComponent from './UncontrolledTextTest'
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <TodoList />
+      <MyComponent/>
     </>
   )
 }
