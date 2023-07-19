@@ -3,13 +3,10 @@
     const handleInput = (e:any) => { //I have no idea what on:input returns
         s = e.target.value
     }
+
+
 </script>
 
 <main>
-    <p>{s}</p>
     <input type = "text" on:input = {handleInput}>
 </main>
-
-<style>
-  
-</style>
