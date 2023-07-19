@@ -1,13 +1,42 @@
-import { useState } from 'react';
+import { useState, useEffect, useReducer} from 'react';
+import PocketBase from 'pocketbase';
+import TextBox from './TextBox';
+
+const pb = new PocketBase('http://139.177.198.53');
 
 interface Todo {
   id: number;
   text: string;
 }
 
+const reducer = (state:Todo[], action) => {
+  switch(action.type){
+    case
+  }
+}
+
+
+
 const TodoList: React.FC = () => {
-  const [todos, setTodos] = useState<Todo[]>([]);
+
+
+  const [todos, dispatch] = useReducer<Todo[]>(reducer);
   const [inputText, setInputText] = useState('');
+  const updateList = async () => await pb.collection('task_test').getFullList()
+  .then((updatedList) =>{
+    updatedList.map((item)=> {
+      setTodos(todos =>[...todos, {item.id, item.content} ])
+    })
+  })
+  useEffect( () => {//on first render sync with server
+    
+
+    
+
+
+
+
+  },[])
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value);
@@ -16,7 +45,6 @@ const TodoList: React.FC = () => {
   const handleAddTodo = () => {
     if (inputText.trim() !== '') {
       const newTodo: Todo = {
-        id: Date.now(),
         text: inputText,
       };
       setTodos([...todos, newTodo]);

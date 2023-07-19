@@ -1,4 +1,4 @@
-import { useState} from "react";
+//import { useState} from "react";
 
 const NavBar: React.FC = () =>{
     return(
@@ -7,7 +7,9 @@ const NavBar: React.FC = () =>{
                 <button className="sharp-edge">Game</button>
                 <button className="sharp-edge">Stats</button>
             </div>
-        <button className="smooth-edge">Profile</button> 
+            <div className="right-section">
+                <button className="smooth-edge">Profile</button> 
+            </div>
         {/*make this a component by itself, make menu to look at name, list of groups, include setting button*/ }
     </div>
     )

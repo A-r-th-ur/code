@@ -17,7 +17,7 @@ const useFetch = <T,>(url: string):FetchResult<T> => { //how the fuck do I make 
   useEffect(() => {
     fetch(url)
     .then(res => {
-      if (!res.ok) { // error coming back from server
+      if (!res.ok) { // error coming back from server 
         throw Error(`Request error with code ${res.status}`);
       } 
       return res.json();

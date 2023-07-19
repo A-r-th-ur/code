@@ -1,6 +1,24 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.left-section {
+  display: flex;
+}
+
+.right-section {
+  display: flex;
+  margin-left: auto;
+}
+
+.sharp-edge {
+  border-radius: 0;
+}
+
+.smooth-edge {
+  border-radius: 10px;
 }
