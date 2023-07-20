@@ -1,7 +1,7 @@
 import { useState} from 'react';
 
 
-const TextBox = () =>{
+const TextBox = ({}) =>{
     const [inputText, setInputText] = useState('');//two way binds it to the textbox
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setInputText(event.target.value);
