@@ -16,16 +16,21 @@
     }
     const handleClick = (arr: Obj[]) =>{
         arr[0].name = "ryan"
-        arr = arr;
         console.log("clicked");
         console.log(arr[0].name)
     }
-    const handleClick2 = (person:Obj) =>{
-        person.id = 100;
-        person = person;
+    const handleClick2 = () =>{
+        dude.id = 100;
+        dude = dude;
         console.log("button clicked")
-        console.log(person.id)
+        console.log(dude.id)
+        console.log(arr[0].name)
     }
+    let numbers = [1, 2, 3, 4];
+    function addNumber() {
+		numbers.push(numbers.length + 1);
+        numbers = numbers;
+	}
 </script>
 
 <main>
@@ -38,6 +43,12 @@
         <p>name is {item.name}</p>
         <p>id is {item.id}</p>
     {/each}
+
+    <button on:click={addNumber}>
+	Add a number
+    </button>
+    <p>{numbers.join(' + ')}</p>
+
 </main>
 
 <style>
