@@ -1,11 +1,7 @@
 <script lang="ts">
-
-    let input;
-    const handleInput = (evt) => {
-        input = evt.target.value;
-    }
+    //this file deals only with displaying the form. the data is passed to top.
+    export let handleInput;
     
-
 </script>
 
 <form>

@@ -1,12 +1,18 @@
 <script lang="ts">
-    import FormatInput from "./lib/FormatInput.svelte";
+    import BaseTextProcessor from "./lib/BaseTextProcessor.svelte";
+    import TextBox from "./lib/TextBox.svelte";
 
-  
+    let baseText: string;  
+    const baseTextSetter = (evt: any) => {
+    baseText = evt.target.value;
+  }
   
 </script>
 
 <main>
-  <FormatInput />
+  <TextBox handleInput = {baseTextSetter}/>
+  <BaseTextProcessor {baseText}/>
+
   
 </main>
 
