@@ -9,10 +9,10 @@
         
         
     */
-    //prolly have to use fucking slots because of fucking mvc principles
+    //Problem is that I have to dynamically generate all the components, and I don't think that anything in the template can be truly dynamic. 
+    //current plan is: first dynamically generate a list of components... this would be easier in react. 
     export let baseText;
-
-   
+    
 </script>
 
 <div>
