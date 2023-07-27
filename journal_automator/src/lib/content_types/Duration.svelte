@@ -1,1 +1,1 @@
-<p>placeholder</p>
+<p>Duration</p>
