@@ -1,1 +1,0 @@
-<p>Duration</p>
