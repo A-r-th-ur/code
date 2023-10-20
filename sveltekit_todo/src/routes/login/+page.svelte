@@ -25,7 +25,7 @@
 
 </script>
 
-<h1 class = "text-grey-700">Planner App</h1>
+<h1 class = "underline">Planner App</h1>
 <form on:submit|preventDefault>
     <input placeholder="Username" type="text" bind:value={username}/>
     <input placeholder="Password" type="password" bind:value={password}/>
