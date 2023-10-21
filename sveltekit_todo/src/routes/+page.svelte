@@ -15,8 +15,10 @@
 
 <h1 class ='text-blue-700 text-3xl p-2 border-b border-gray-100'>Planner App</h1>
 {#if $currentUser}
-    <p class='testStylePacket'>Signed in as {$currentUser.username}</p>
-    <Tasklist />
+    <p>Signed in as {$currentUser.username}</p>
+    <div class='border-4'>
+        <Tasklist />
+    </div>
 {/if}
 <button on:click={logOut}>Log Out</button>
 
