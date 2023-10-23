@@ -28,7 +28,7 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: '/planner_app'
+          BASE_PATH: '/'
         run: |
           npm run build
 
