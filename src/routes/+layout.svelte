@@ -10,10 +10,10 @@
 
     onMount(() => {
         if(!$currentUser){
-            goto("/a-r-th-ur.github.io/login")
+            goto("/login")
         }
         else{
-            goto("/a-r-th-ur.github.io")
+            goto("/")
         }
 
     })

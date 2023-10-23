@@ -14,7 +14,7 @@
         try{
         await pb.collection('users').authWithPassword(username, password)
         if($currentUser){
-           goto("/a-r-th-ur.github.io")
+           goto("/")
         }
         }
         catch{
@@ -26,7 +26,7 @@
 
 
 	function signUpRedirect() {
-		goto("/a-r-th-ur.github.io/signup")
+		goto("/signup")
 	}
 </script>
 

@@ -30,7 +30,7 @@
 
         try{
             const record = await pb.collection('users').create(data);
-            goto("/a-r-th-ur.github.io/login")
+            goto("/login")
         }
         catch(error){
             hideError = false
