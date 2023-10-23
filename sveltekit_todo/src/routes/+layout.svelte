@@ -12,6 +12,9 @@
         if(!$currentUser){
             goto("/login")
         }
+        else{
+            goto("/")
+        }
 
     })
 </script>

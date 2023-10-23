@@ -23,6 +23,11 @@
     }
 
 
+
+
+	function signUpRedirect() {
+		goto("/signup")
+	}
 </script>
 
 <h1 class = "underline">Planner App</h1>
@@ -30,4 +35,5 @@
     <input placeholder="Username" type="text" bind:value={username}/>
     <input placeholder="Password" type="password" bind:value={password}/>
     <button on:click={login}>Log In</button>
+    <button on:click={signUpRedirect}>Sign Up</button>
 </form>
