@@ -10,6 +10,7 @@ const config = {
 		adapter: adapter()
 	},
 	preprocess: vitePreprocess()
+	
 };
-
+config.paths = { base: process.argv.includes('dev') ? '' : process.env.BASE_PATH }
 export default config;
