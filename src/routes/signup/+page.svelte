@@ -30,6 +30,7 @@
 
         try{
             const record = await pb.collection('users').create(data);
+            console.log("successfully created user")
             goto("/login")
         }
         catch(error){
