@@ -37,14 +37,18 @@
         const record = await pb.collection('Tasks').update(taskId, data);
     }
 
-
+    
+    /**
+	 * @type {HTMLInputElement}
+	 */
+    let inputElement;
 
 
 </script>
 
 <div class="flex">
-    <form on:submit|preventDefault={() => updateItem(taskId, taskName, inputTaskName)}> <!-- for getting submit event when pressing enter -->
-       <input type="text" bind:value={inputTaskName} on:blur={() => updateItem(taskId, taskName, inputTaskName)} /> 
+    <form on:submit|preventDefault={() => { console.log("submitted"); inputElement.blur();}}> <!-- for getting submit event when pressing enter -->
+       <input type="text" bind:this={inputElement} bind:value={inputTaskName} on:blur={() => updateItem(taskId, taskName, inputTaskName)} /> 
     </form>
     
     <button on:click={async ()=>{
