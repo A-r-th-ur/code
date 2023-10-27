@@ -15,11 +15,9 @@
     }   
 </script>
 
-<div>
-    <span>
-        <input type = 'text' bind:value={inputText}>
-    </span>
-    <button on:click={addTask}>submit</button>
+<div class="flex">
+    <input class="border-2 border-green-500" type = 'text' bind:value={inputText}>
+    <button class=" ml-2 border-2 border-green-500"  on:click={addTask}>submit</button>
 </div>
 
 
