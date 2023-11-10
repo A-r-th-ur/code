@@ -24,11 +24,11 @@ async function deleteTask(taskId){
 
 /**
  * @param {string} taskId
- * @param {any[]} params
+ * @param {any[any]} params
  */
-function updateTask(taskId,...params){
+async function updateTask(taskId,...params){
     const data = {
-        "task_name": params[],
+        "task_name": params[task_name],
         "user_id": "RELATION_RECORD_ID",
         "parent_id": "RELATION_RECORD_ID"
     };
@@ -42,4 +42,3 @@ function updateTask(taskId,...params){
 function getTasks(parentId,...parameters){
     return;
 }
-
