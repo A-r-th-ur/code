@@ -23,7 +23,6 @@
     async function updateItem(/** @type {string} */ taskId, /** @type {any} */ taskName,/** @type {string} */ inputTaskName){
         
         if(taskName === inputTaskName){
-            //console.log(`${taskName} and ${inputTaskName}`)
            return; //do nothing if no change 
         } 
         if(inputTaskName === ''){

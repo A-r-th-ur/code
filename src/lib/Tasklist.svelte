@@ -1,8 +1,7 @@
 <script>
 	import { onMount, onDestroy } from "svelte";
-	import { currentUser, pb } from "./auth";
+	import { pb } from "./auth";
 	import TextBox from "./TextBox.svelte";
-    import { writable } from "svelte/store";
 	import TaskListItem from "./TaskListItem.svelte";
 
     /**
@@ -10,6 +9,12 @@
 	 */
      export let parentTask;
     
+
+     /**
+	 * @type {boolean}
+	 */
+      export let visible;
+      
     /** How to fucking interface this shit
 	 * @type {any[]}  
 	 */
@@ -19,6 +24,7 @@
     {
         const resultList = await pb.collection('Tasks').getList(1, 50, { 
             sort: 'created',
+            filter: 'parent_id = ""'  
         });
         content = resultList.items;
 
@@ -55,13 +61,14 @@
   
 
 </script>
-
-<h5>{parentTask || "root"}</h5>
-<TextBox/>
-<div>
-    {#each content as item(item.id)}
+{#if (visible)}
+    <h5>{parentTask || "root"}</h5>
+    <TextBox/>
     <div>
-        <TaskListItem taskName={item.task_name} taskId={item.id}/>
+        {#each content as item(item.id)}
+        <div>
+            <TaskListItem taskName={item.task_name} taskId={item.id}/>
+        </div>
+        {/each}
     </div>
-    {/each}
-</div>
+{/if}
