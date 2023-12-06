@@ -3,6 +3,7 @@
 	import { pb } from "./auth";
 	import TextBox from "./TextBox.svelte";
 	import TaskListItem from "./TaskListItem.svelte";
+    import crudFuncs from "./crudFuncs.js";
 
     /**
 	 * @type {string|undefined}
@@ -22,11 +23,14 @@
 
     onMount(async () => 
     {
-        const resultList = await pb.collection('Tasks').getList(1, 50, { 
+        /* const resultList = await pb.collection('Tasks').getList(1, 50, { 
             sort: 'created',
-            filter: 'parent_id = ""'  
-        });
+            filter: `parent_id = ""`,
+            requestKey: null  
+        }); */
+        const resultList = crudFuncs.getTasks()
         content = resultList.items;
+        console.log(content)
 
 
         pb.collection('Tasks').subscribe('*', function (e) {

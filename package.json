@@ -35,6 +35,7 @@
   },
   "type": "module",
   "dependencies": {
+    "jest": "^29.7.0",
     "pocketbase": "^0.18.0"
   },
   "main": "playwright.config.js",

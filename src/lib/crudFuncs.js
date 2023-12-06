@@ -1,5 +1,11 @@
-import { t } from "vitest/dist/types-198fd1d9";
-import { pb, currentUser} from "./auth";
+import { currentUser, pb} from "./auth";
+
+export default{
+    createTask,
+    deleteTask,
+    getTasks,
+    updateTask
+}
 
 /**
  * @param {string} taskName
@@ -24,12 +30,12 @@ async function deleteTask(taskId){
 
 /**
  * @param {string} taskId
- * @param {any[any]} params
+ * @param {any} params
  */
 async function updateTask(taskId,...params){
     const data = {
-        "task_name": params[task_name],
-        "user_id": "RELATION_RECORD_ID",
+        "task_name": params.task_name,
+        "user_id": currentUser,
         "parent_id": "RELATION_RECORD_ID"
     };
     const record = await pb.collection('Tasks').update(taskId, data);
@@ -37,8 +43,17 @@ async function updateTask(taskId,...params){
 
 /**
  * @param {string} parentId
- * @param {any[]} parameters
+ * @param {any} parameters
+ * parameters can take a filterString, sortString, expandString, fieldsString, expandString, pageString, perPageString, and requestKeyString.
+ * interface to inplement later
  */
-function getTasks(parentId,...parameters){
-    return;
+async function getTasks(parentId,...parameters){
+    const resultList = await pb.collection('Tasks').getFullList(parameters,{
+        filter: parameters.filterString,
+        sort: parameters.sortString,
+        requestKey: parameters.requestKeyString,
+
+
+
+    });
 }

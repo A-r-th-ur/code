@@ -13,7 +13,7 @@
     export let taskName;
 
 
-    //onMount(() => console.log(`${taskName} and ${inputTaskName}`))//this proves that the props are successfullly passed in
+    onMount(() => console.log(`${taskName} and ${inputTaskName}`))//this proves that the props are successfullly passed in
 
     /**
 	 * @type {string}
@@ -27,7 +27,7 @@
         } 
         if(inputTaskName === ''){
             await pb.collection('Tasks').delete(taskId);
-
+ 
         } ; //delete if empty
 
         const data = {

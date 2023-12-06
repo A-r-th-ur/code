@@ -16,7 +16,7 @@
 {#if $currentUser}
     <div class='flex'>
         <div class='border-2 border-violet-500 w-3/12 h-screen'> <!-- main task list -->
-            <Tasklist parentTask={""} visible={true}/>
+            <Tasklist parentTask={undefined} visible={true}/>
         </div>
 
         <div class='flex flex-col flex-1'> 
@@ -31,7 +31,7 @@
             <div class="flex flex-1 w-full border-2 border-green-500">
 
                 <div class='w-1/2 ml-auto border-2 border-yellow-500' > <!-- this is the middle box -->
-                    <Tasklist parentTask={""} visible={false}/>
+                    <!-- <Tasklist parentTask={"test parent"} visible={true}/> -->
                 </div>
 
                 <div class='w-1/2 ml-auto border-2 border-violet-500' > <!-- this is the right box -->
